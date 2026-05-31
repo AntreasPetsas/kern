@@ -23,7 +23,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
   </TabItem>
   <TabItem label="TypeScript tokens">
     ```ts
-    import { tokens } from '@kern/design-system/tokens';
+    import { tokens } from '@kern-system/design-system/tokens';
 
     const primary = tokens.color.action.primary;   // "#2563eb"
     const spacing = tokens.spacing[4];             // "1rem"
@@ -32,7 +32,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
   <TabItem label="Tailwind preset">
     ```js
     // tailwind.config.js
-    import kernPreset from '@kern/design-system/tailwind';
+    import kernPreset from '@kern-system/design-system/tailwind';
     export default { presets: [kernPreset] };
     ```
     ```jsx

@@ -9,7 +9,7 @@ This is the exhaustive token reference. The reference form is what you type in c
 Semantic tokens communicate intent. They resolve to primitive values but provide stable names that survive palette changes.
 
 | Reference | Resolves to | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `color.action.primary` | `#2563eb` *(via `color.blue.600`)* | `--kern-color-action-primary` | Primary action background |
 | `color.action.primaryHover` | `#1d4ed8` *(via `color.blue.700`)* | `--kern-color-action-primary-hover` | Primary action background on hover |
 | `color.action.primaryForeground` | `#ffffff` *(via `color.white`)* | `--kern-color-action-primary-foreground` | Text/icon on primary action |
@@ -31,7 +31,7 @@ Semantic tokens communicate intent. They resolve to primitive values but provide
 | `color.surface.overlay` | `#111827` *(via `color.gray.900`)* | `--kern-color-surface-overlay` | Overlay/backdrop background |
 | `color.border.default` | `#e5e7eb` *(via `color.gray.200`)* | `--kern-color-border-default` | Default border |
 | `color.border.strong` | `#9ca3af` *(via `color.gray.400`)* | `--kern-color-border-strong` | Strong/emphasis border |
-| `color.border.focus` | `#0ea5e9` *(via `color.blue.500`)* | `--kern-color-border-focus` | Focus ring color |
+| `color.border.focus` | `#3b82f6` *(via `color.blue.500`)* | `--kern-color-border-focus` | Focus ring color |
 | `color.feedback.error` | `#dc2626` *(via `color.red.600`)* | `--kern-color-feedback-error` | Error state text/border |
 | `color.feedback.errorBackground` | `#fef2f2` *(via `color.red.50`)* | `--kern-color-feedback-error-background` | Error state background |
 | `color.feedback.success` | `#16a34a` *(via `color.green.600`)* | `--kern-color-feedback-success` | Success state text/border |
@@ -44,13 +44,13 @@ Semantic tokens communicate intent. They resolve to primitive values but provide
 Raw palette. Use only when no semantic token fits. Prefer adding a semantic alias.
 
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `color.blue.50` | `#eff6ff` | `--kern-color-blue-50` | Blue 50 |
 | `color.blue.100` | `#dbeafe` | `--kern-color-blue-100` | Blue 100 |
 | `color.blue.200` | `#bfdbfe` | `--kern-color-blue-200` | Blue 200 |
 | `color.blue.300` | `#93c5fd` | `--kern-color-blue-300` | Blue 300 |
 | `color.blue.400` | `#60a5fa` | `--kern-color-blue-400` | Blue 400 |
-| `color.blue.500` | `#0ea5e9` | `--kern-color-blue-500` | Blue 500 |
+| `color.blue.500` | `#3b82f6` | `--kern-color-blue-500` | Blue 500 |
 | `color.blue.600` | `#2563eb` | `--kern-color-blue-600` | Blue 600 |
 | `color.blue.700` | `#1d4ed8` | `--kern-color-blue-700` | Blue 700 |
 | `color.blue.800` | `#1e40af` | `--kern-color-blue-800` | Blue 800 |
@@ -88,7 +88,7 @@ Raw palette. Use only when no semantic token fits. Prefer adding a semantic alia
 Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem; pixel equivalents are in the description.
 
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `spacing.0` | `0rem` | `--kern-spacing-0` | 0px |
 | `spacing.1` | `0.25rem` | `--kern-spacing-1` | 4px |
 | `spacing.2` | `0.5rem` | `--kern-spacing-2` | 8px |
@@ -111,16 +111,14 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 ## Typography
 
 ### Font family
-
 | Reference | Value | CSS variable |
-| --- | --- | --- |
+|---|---|---|
 | `typography.fontFamily.base` | `Inter, system-ui, -apple-system, sans-serif` | `--kern-typography-font-family-base` |
 | `typography.fontFamily.mono` | `JetBrains Mono, Menlo, Consolas, monospace` | `--kern-typography-font-family-mono` |
 
 ### Font size
-
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `typography.fontSize.xs` | `0.75rem` | `--kern-typography-font-size-xs` | 12px — captions, labels |
 | `typography.fontSize.sm` | `0.875rem` | `--kern-typography-font-size-sm` | 14px — secondary text, small buttons |
 | `typography.fontSize.md` | `1rem` | `--kern-typography-font-size-md` | 16px — base body text |
@@ -131,26 +129,23 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 | `typography.fontSize.4xl` | `2.25rem` | `--kern-typography-font-size-4xl` | 36px — hero headings |
 
 ### Font weight
-
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `typography.fontWeight.regular` | `400` | `--kern-typography-font-weight-regular` | Normal weight |
 | `typography.fontWeight.medium` | `500` | `--kern-typography-font-weight-medium` | Medium weight — emphasis |
 | `typography.fontWeight.semibold` | `600` | `--kern-typography-font-weight-semibold` | Semibold — headings, labels |
 | `typography.fontWeight.bold` | `700` | `--kern-typography-font-weight-bold` | Bold — strong emphasis |
 
 ### Line height
-
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `typography.lineHeight.tight` | `1.25` | `--kern-typography-line-height-tight` | Tight — headings |
 | `typography.lineHeight.base` | `1.5` | `--kern-typography-line-height-base` | Base — body text |
 | `typography.lineHeight.relaxed` | `1.75` | `--kern-typography-line-height-relaxed` | Relaxed — long-form content |
 
 ### Letter spacing
-
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `typography.letterSpacing.tight` | `-0.025em` | `--kern-typography-letter-spacing-tight` | Tight tracking — large headings |
 | `typography.letterSpacing.normal` | `0em` | `--kern-typography-letter-spacing-normal` | Normal tracking |
 | `typography.letterSpacing.wide` | `0.025em` | `--kern-typography-letter-spacing-wide` | Wide tracking — small caps, labels |
@@ -159,7 +154,7 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 ## Radius
 
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `radius.none` | `0rem` | `--kern-radius-none` | No rounding |
 | `radius.sm` | `0.25rem` | `--kern-radius-sm` | 4px — subtle rounding (inputs, small badges) |
 | `radius.md` | `0.5rem` | `--kern-radius-md` | 8px — default rounding (buttons, cards) |
@@ -170,7 +165,7 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 ## Shadow
 
 | Reference | Value | CSS variable | Description |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `shadow.none` | `none` | `--kern-shadow-none` | No shadow |
 | `shadow.sm` | `0 1px 2px 0 rgba(0, 0, 0, 0.05)` | `--kern-shadow-sm` | Subtle shadow — inputs, small cards |
 | `shadow.md` | `0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)` | `--kern-shadow-md` | Default shadow — cards, dropdowns |
@@ -181,7 +176,6 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 ## How to use
 
 ### In plain CSS
-
 ```css
 .my-card {
   background-color: var(--kern-color-surface-raised);
@@ -192,7 +186,6 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 ```
 
 ### In React with inline styles
-
 ```jsx
 <div style={{
   background: 'var(--kern-color-surface-raised)',
@@ -201,14 +194,12 @@ Use these for padding, margin, gap, and any rhythmic spacing. Values are in rem;
 ```
 
 ### In React with typed tokens
-
 ```tsx
-import { tokens } from '@kern/design-system/tokens';
+import { tokens } from '@kern-system/design-system/tokens';
 <div style={{ background: tokens.color.surface.raised, padding: tokens.spacing[5] }}>…</div>
 ```
 
 ### With Tailwind preset
-
 ```jsx
 <div className="bg-action-primary p-5 rounded-lg shadow-md">…</div>
 ```

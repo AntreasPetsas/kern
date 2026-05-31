@@ -52,7 +52,7 @@ Never hardcode colors, spacing, font-sizes, radius, or shadows. Always reference
 <div style={{ padding: 'var(--kern-spacing-4)', background: 'var(--kern-color-action-primary)' }} />
 
 // ✓ good (typed tokens)
-import { tokens } from '@kern/design-system/tokens';
+import { tokens } from '@kern-system/design-system/tokens';
 <div style={{ padding: tokens.spacing[4], background: tokens.color.action.primary }} />
 \`\`\`
 
@@ -157,7 +157,7 @@ ${tokens.map((t) => `${toCssVar(t.displayPath).padEnd(48)} ${formatValue(t.value
 ## 7. Example: putting it all together
 
 \`\`\`jsx
-import { Card, CardHeader, CardBody, CardFooter, Button, Input } from '@kern/design-system';
+import { Card, CardHeader, CardBody, CardFooter, Button, Input } from '@kern-system/design-system';
 
 export function SignupCard() {
   return (

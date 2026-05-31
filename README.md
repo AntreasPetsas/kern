@@ -9,12 +9,12 @@ Kern is a design system built on W3C DTCG design tokens. Edit `tokens/` and `spe
 ### 1. npm package (React + typed tokens)
 
 ```bash
-npm i @kern/design-system
+npm i @kern-system/design-system
 ```
 
 ```jsx
-import { Button, Input, Card, CardHeader, CardBody, CardFooter } from '@kern/design-system';
-import '@kern/design-system/css'; // or link build/css/variables.css in your HTML
+import { Button, Input, Card, CardHeader, CardBody, CardFooter } from '@kern-system/design-system';
+import '@kern-system/design-system/css'; // or link build/css/variables.css in your HTML
 
 <Card shadow="md">
   <CardHeader><h2>Sign up</h2></CardHeader>
@@ -31,7 +31,7 @@ import '@kern/design-system/css'; // or link build/css/variables.css in your HTM
 Typed token constants:
 
 ```ts
-import { tokens } from '@kern/design-system/tokens';
+import { tokens } from '@kern-system/design-system/tokens';
 
 tokens.color.action.primary   // "#2563eb"
 tokens.spacing[4]             // "1rem"
@@ -57,7 +57,7 @@ Copy `build/css/variables.css` into any project. All 116 tokens available as `--
 
 ```js
 // tailwind.config.js
-import kernPreset from '@kern/design-system/tailwind';
+import kernPreset from '@kern-system/design-system/tailwind';
 export default { presets: [kernPreset] };
 ```
 

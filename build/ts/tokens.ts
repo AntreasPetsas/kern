@@ -9,7 +9,7 @@ export const tokens = {
       "200": "#bfdbfe",
       "300": "#93c5fd",
       "400": "#60a5fa",
-      "500": "#0ea5e9",
+      "500": "#3b82f6",
       "600": "#2563eb",
       "700": "#1d4ed8",
       "800": "#1e40af",
@@ -78,7 +78,7 @@ export const tokens = {
     "border": {
       "default": "#e5e7eb",
       "strong": "#9ca3af",
-      "focus": "#0ea5e9"
+      "focus": "#3b82f6"
     },
     "feedback": {
       "error": "#dc2626",

@@ -7,10 +7,10 @@
 **Category:** action
 Triggers an action or event. The primary interactive element for user-initiated actions.
 
-### Button Props
+### Props
 
 | Name | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
+|---|---|---|---|---|
 | `children` | `ReactNode` | — | yes | Button label or icon+label content |
 | `variant` | `'primary' \| 'secondary' \| 'ghost'` | `'primary'` | no | Visual style. primary = filled, secondary = outlined/muted fill, ghost = transparent |
 | `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | no | Physical size affecting padding and font-size |
@@ -20,14 +20,12 @@ Triggers an action or event. The primary interactive element for user-initiated 
 | `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | no | HTML button type. Use 'submit' inside forms |
 | `onClick` | `(e: MouseEvent) => void` | — | no | Click handler |
 
-### Button Variants
-
+### Variants
 - **primary** — High-emphasis action. Use once per section for the single most important action.
 - **secondary** — Medium-emphasis. Supports the primary action or provides a safe alternative.
 - **ghost** — Low-emphasis. Tertiary actions, destructive confirmations, or toolbar controls.
 
-### Button States
-
+### States
 - **default** — Resting state
 - **hover** — Cursor over the button — background shifts one shade darker
 - **focus-visible** — Keyboard-focused — 2px solid focus ring with offset
@@ -35,8 +33,7 @@ Triggers an action or event. The primary interactive element for user-initiated 
 - **disabled** — Interaction blocked — muted palette, not-allowed cursor
 - **loading** — Async action running — spinner replaces or prefixes label, pointer-events none
 
-### Button Tokens used
-
+### Tokens used
 - `color.action.primary`
 - `color.action.primaryHover`
 - `color.action.primaryForeground`
@@ -60,8 +57,7 @@ Triggers an action or event. The primary interactive element for user-initiated 
 - `typography.lineHeight.tight`
 - `typography.fontFamily.base`
 
-### Button Accessibility
-
+### Accessibility
 - **Role:** button
 - **Keyboard:**
   - Enter — activates the button
@@ -71,7 +67,7 @@ Triggers an action or event. The primary interactive element for user-initiated 
   - aria-busy='true' + aria-label update when loading
   - No aria-role needed — native <button> has implicit button role
 
-### Button Examples
+### Examples
 
 **Primary variants** — All three variants at default size
 
@@ -101,6 +97,7 @@ Triggers an action or event. The primary interactive element for user-initiated 
 <Button type='submit' variant='primary'>Create account</Button>
 ```
 
+
 ---
 
 ## Card
@@ -108,34 +105,30 @@ Triggers an action or event. The primary interactive element for user-initiated 
 **Category:** layout
 Layout container that groups related content into a visually distinct surface. Provides structure, not behaviour.
 
-### Card Props
+### Props
 
 | Name | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
+|---|---|---|---|---|
 | `children` | `ReactNode` | — | yes | Card content — use CardHeader, CardBody, CardFooter sub-components for structure |
 | `shadow` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'sm'` | no | Box shadow level. 'none' for flat/bordered style, 'md'/'lg' for elevated surfaces. |
 | `padding` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'` | no | Internal padding applied uniformly. Use 'none' when the card contains a full-bleed image or custom layout. |
 | `as` | `ElementType` | `'div'` | no | HTML element or React component to render as the card root. Use 'article' for self-contained content, 'section' for thematic groupings. |
 | `className` | `string` | — | no | Additional class names for layout overrides (e.g. width, margin) |
 
-### Card Variants
-
+### Variants
 - **default** — White surface with a subtle shadow — standard use case.
 - **flat** — No shadow; relies on border alone. Good for use on gray/subtle backgrounds.
 - **raised** — Prominent shadow — draws attention, modal-like weight.
 
-### Card States
-
+### States
 - **default** — Static container — no interactive states unless consumer adds them
 
-### Card Sub-components
-
+### Sub-components
 - **CardHeader** — Top area — title, subtitle, and optional action (e.g. menu or icon button)
 - **CardBody** — Main content area — text, images, data, form fields
 - **CardFooter** — Bottom area — actions (buttons), metadata, or summary text
 
-### Card Tokens used
-
+### Tokens used
 - `color.surface.raised`
 - `color.surface.default`
 - `color.border.default`
@@ -149,8 +142,7 @@ Layout container that groups related content into a visually distinct surface. P
 - `spacing.6`
 - `spacing.8`
 
-### Card Accessibility
-
+### Accessibility
 - **Role:** depends on `as` prop — see usage rules
 - **Keyboard:**
   - No inherent keyboard interaction — keyboard behaviour is provided by interactive children
@@ -159,7 +151,7 @@ Layout container that groups related content into a visually distinct surface. P
   - If the card is clickable as a whole, use a single <a> or <button> wrapping the content — do not add onClick to the card div
   - Ensure CardHeader contains a heading element (h2–h6) for screen reader navigation
 
-### Card Examples
+### Examples
 
 **Basic card** — Default card with header, body, and footer
 
@@ -198,6 +190,7 @@ Layout container that groups related content into a visually distinct surface. P
 </Card>
 ```
 
+
 ---
 
 ## Input
@@ -205,10 +198,10 @@ Layout container that groups related content into a visually distinct surface. P
 **Category:** form
 Single-line text entry field. Pairs with a visible label and optional helper text.
 
-### Input Props
+### Props
 
 | Name | Type | Default | Required | Description |
-| --- | --- | --- | --- | --- |
+|---|---|---|---|---|
 | `id` | `string` | — | yes | Links the input to its <label>. Must be unique per page. |
 | `label` | `string` | — | yes | Visible label text. Always required — do not use placeholder as a substitute. |
 | `value` | `string` | `''` | no | Controlled value |
@@ -221,13 +214,11 @@ Single-line text entry field. Pairs with a visible label and optional helper tex
 | `type` | `string` | `'text'` | no | HTML input type (text, email, password, number, search, url, tel) |
 | `autoComplete` | `string` | — | no | HTML autocomplete attribute |
 
-### Input Variants
-
+### Variants
 - **default** — Normal state — border default, subtle background.
 - **error** — Validation failed — red border, error message displayed below.
 
-### Input States
-
+### States
 - **default** — Resting — muted border, subtle fill
 - **focus** — Active — focus ring, border color shifts to focus blue
 - **error** — Validation failed — red border, error message visible
@@ -235,8 +226,7 @@ Single-line text entry field. Pairs with a visible label and optional helper tex
 - **disabled** — Greyed out — interaction prevented, opacity reduced
 - **filled** — Has a value — no visual change; placeholder hidden
 
-### Input Tokens used
-
+### Tokens used
 - `color.surface.subtle`
 - `color.surface.default`
 - `color.border.default`
@@ -258,8 +248,7 @@ Single-line text entry field. Pairs with a visible label and optional helper tex
 - `typography.lineHeight.base`
 - `typography.fontFamily.base`
 
-### Input Accessibility
-
+### Accessibility
 - **Role:** textbox
 - **Keyboard:**
   - Tab — moves focus to the input
@@ -270,7 +259,7 @@ Single-line text entry field. Pairs with a visible label and optional helper tex
   - aria-describedby pointing to helperText or errorMessage element id
   - <label htmlFor={id}> must always be present and visible
 
-### Input Examples
+### Examples
 
 **Basic input** — Controlled input with label and placeholder
 
@@ -301,3 +290,4 @@ Single-line text entry field. Pairs with a visible label and optional helper tex
 ```jsx
 <Input id='locked' label='Account ID' value='acc_8f3k2' disabled />
 ```
+

@@ -19,7 +19,7 @@ NEVER hardcode colors, spacing, font-sizes, radius, or shadows. Always reference
 <div style={{ padding: 'var(--kern-spacing-4)', background: 'var(--kern-color-action-primary)' }}>...</div>
 
 // ✓ good — typed tokens (in JS/TS code)
-import { tokens } from '@kern/design-system/tokens';
+import { tokens } from '@kern-system/design-system/tokens';
 <div style={{ padding: tokens.spacing[4], background: tokens.color.action.primary }}>...</div>
 ```
 

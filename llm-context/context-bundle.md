@@ -18,7 +18,7 @@ Never hardcode colors, spacing, font-sizes, radius, or shadows. Always reference
 <div style={{ padding: 'var(--kern-spacing-4)', background: 'var(--kern-color-action-primary)' }} />
 
 // ✓ good (typed tokens)
-import { tokens } from '@kern/design-system/tokens';
+import { tokens } from '@kern-system/design-system/tokens';
 <div style={{ padding: tokens.spacing[4], background: tokens.color.action.primary }} />
 ```
 
@@ -62,7 +62,7 @@ The source token tree has `primitive` and `semantic` layers; both are stripped f
 | `color.surface.overlay` | `#111827` *(via `color.gray.900`)* | `--kern-color-surface-overlay` | Overlay/backdrop background |
 | `color.border.default` | `#e5e7eb` *(via `color.gray.200`)* | `--kern-color-border-default` | Default border |
 | `color.border.strong` | `#9ca3af` *(via `color.gray.400`)* | `--kern-color-border-strong` | Strong/emphasis border |
-| `color.border.focus` | `#0ea5e9` *(via `color.blue.500`)* | `--kern-color-border-focus` | Focus ring color |
+| `color.border.focus` | `#3b82f6` *(via `color.blue.500`)* | `--kern-color-border-focus` | Focus ring color |
 | `color.feedback.error` | `#dc2626` *(via `color.red.600`)* | `--kern-color-feedback-error` | Error state text/border |
 | `color.feedback.errorBackground` | `#fef2f2` *(via `color.red.50`)* | `--kern-color-feedback-error-background` | Error state background |
 | `color.feedback.success` | `#16a34a` *(via `color.green.600`)* | `--kern-color-feedback-success` | Success state text/border |
@@ -79,7 +79,7 @@ The source token tree has `primitive` and `semantic` layers; both are stripped f
 | `color.blue.200` | `#bfdbfe` | `--kern-color-blue-200` | Blue 200 |
 | `color.blue.300` | `#93c5fd` | `--kern-color-blue-300` | Blue 300 |
 | `color.blue.400` | `#60a5fa` | `--kern-color-blue-400` | Blue 400 |
-| `color.blue.500` | `#0ea5e9` | `--kern-color-blue-500` | Blue 500 |
+| `color.blue.500` | `#3b82f6` | `--kern-color-blue-500` | Blue 500 |
 | `color.blue.600` | `#2563eb` | `--kern-color-blue-600` | Blue 600 |
 | `color.blue.700` | `#1d4ed8` | `--kern-color-blue-700` | Blue 700 |
 | `color.blue.800` | `#1e40af` | `--kern-color-blue-800` | Blue 800 |
@@ -457,7 +457,7 @@ Drop `build/css/variables.css` into any page (no build step needed) to get every
 --kern-color-blue-200                            #bfdbfe
 --kern-color-blue-300                            #93c5fd
 --kern-color-blue-400                            #60a5fa
---kern-color-blue-500                            #0ea5e9
+--kern-color-blue-500                            #3b82f6
 --kern-color-blue-600                            #2563eb
 --kern-color-blue-700                            #1d4ed8
 --kern-color-blue-800                            #1e40af
@@ -510,7 +510,7 @@ Drop `build/css/variables.css` into any page (no build step needed) to get every
 --kern-color-surface-overlay                     #111827
 --kern-color-border-default                      #e5e7eb
 --kern-color-border-strong                       #9ca3af
---kern-color-border-focus                        #0ea5e9
+--kern-color-border-focus                        #3b82f6
 --kern-color-feedback-error                      #dc2626
 --kern-color-feedback-error-background           #fef2f2
 --kern-color-feedback-success                    #16a34a
@@ -575,7 +575,7 @@ Drop `build/css/variables.css` into any page (no build step needed) to get every
 ## 7. Example: putting it all together
 
 ```jsx
-import { Card, CardHeader, CardBody, CardFooter, Button, Input } from '@kern/design-system';
+import { Card, CardHeader, CardBody, CardFooter, Button, Input } from '@kern-system/design-system';
 
 export function SignupCard() {
   return (

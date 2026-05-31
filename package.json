@@ -1,5 +1,5 @@
 {
-  "name": "@kern/design-system",
+  "name": "@kern-system/design-system",
   "version": "0.0.1",
   "description": "Kern — tokens, components, and rules authored once, consumed everywhere.",
   "type": "module",
