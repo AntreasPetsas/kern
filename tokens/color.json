@@ -1,0 +1,94 @@
+{
+  "color": {
+    "$type": "color",
+    "primitive": {
+      "blue": {
+        "50":  { "$value": "#eff6ff", "$description": "Blue 50" },
+        "100": { "$value": "#dbeafe", "$description": "Blue 100" },
+        "200": { "$value": "#bfdbfe", "$description": "Blue 200" },
+        "300": { "$value": "#93c5fd", "$description": "Blue 300" },
+        "400": { "$value": "#60a5fa", "$description": "Blue 400" },
+        "500": { "$value": "#3b82f6", "$description": "Blue 500" },
+        "600": { "$value": "#2563eb", "$description": "Blue 600" },
+        "700": { "$value": "#1d4ed8", "$description": "Blue 700" },
+        "800": { "$value": "#1e40af", "$description": "Blue 800" },
+        "900": { "$value": "#1e3a8a", "$description": "Blue 900" }
+      },
+      "gray": {
+        "50":  { "$value": "#f9fafb", "$description": "Gray 50" },
+        "100": { "$value": "#f3f4f6", "$description": "Gray 100" },
+        "200": { "$value": "#e5e7eb", "$description": "Gray 200" },
+        "300": { "$value": "#d1d5db", "$description": "Gray 300" },
+        "400": { "$value": "#9ca3af", "$description": "Gray 400" },
+        "500": { "$value": "#6b7280", "$description": "Gray 500" },
+        "600": { "$value": "#4b5563", "$description": "Gray 600" },
+        "700": { "$value": "#374151", "$description": "Gray 700" },
+        "800": { "$value": "#1f2937", "$description": "Gray 800" },
+        "900": { "$value": "#111827", "$description": "Gray 900" }
+      },
+      "red": {
+        "50":  { "$value": "#fef2f2", "$description": "Red 50" },
+        "100": { "$value": "#fee2e2", "$description": "Red 100" },
+        "500": { "$value": "#ef4444", "$description": "Red 500" },
+        "600": { "$value": "#dc2626", "$description": "Red 600" },
+        "700": { "$value": "#b91c1c", "$description": "Red 700" }
+      },
+      "green": {
+        "50":  { "$value": "#f0fdf4", "$description": "Green 50" },
+        "100": { "$value": "#dcfce7", "$description": "Green 100" },
+        "500": { "$value": "#22c55e", "$description": "Green 500" },
+        "600": { "$value": "#16a34a", "$description": "Green 600" },
+        "700": { "$value": "#15803d", "$description": "Green 700" }
+      },
+      "yellow": {
+        "50":  { "$value": "#fefce8", "$description": "Yellow 50" },
+        "100": { "$value": "#fef9c3", "$description": "Yellow 100" },
+        "500": { "$value": "#eab308", "$description": "Yellow 500" },
+        "600": { "$value": "#ca8a04", "$description": "Yellow 600" }
+      },
+      "white": { "$value": "#ffffff", "$description": "White" },
+      "black": { "$value": "#000000", "$description": "Black" },
+      "transparent": { "$value": "transparent", "$description": "Transparent" }
+    },
+    "semantic": {
+      "action": {
+        "primary":          { "$value": "{color.primitive.blue.600}", "$description": "Primary action background" },
+        "primaryHover":     { "$value": "{color.primitive.blue.700}", "$description": "Primary action background on hover" },
+        "primaryForeground":{ "$value": "{color.primitive.white}",   "$description": "Text/icon on primary action" },
+        "secondary":        { "$value": "{color.primitive.gray.100}", "$description": "Secondary action background" },
+        "secondaryHover":   { "$value": "{color.primitive.gray.200}", "$description": "Secondary action background on hover" },
+        "secondaryForeground":{ "$value": "{color.primitive.gray.800}", "$description": "Text/icon on secondary action" },
+        "ghost":            { "$value": "{color.primitive.transparent}", "$description": "Ghost action background" },
+        "ghostHover":       { "$value": "{color.primitive.gray.100}", "$description": "Ghost action background on hover" },
+        "ghostForeground":  { "$value": "{color.primitive.gray.700}", "$description": "Text/icon on ghost action" }
+      },
+      "text": {
+        "default":  { "$value": "{color.primitive.gray.900}", "$description": "Default body text" },
+        "muted":    { "$value": "{color.primitive.gray.500}", "$description": "Muted/secondary text" },
+        "disabled": { "$value": "{color.primitive.gray.300}", "$description": "Disabled text" },
+        "onDark":   { "$value": "{color.primitive.white}",   "$description": "Text on dark backgrounds" },
+        "link":     { "$value": "{color.primitive.blue.600}", "$description": "Link text" },
+        "linkHover":{ "$value": "{color.primitive.blue.700}", "$description": "Link text on hover" }
+      },
+      "surface": {
+        "default": { "$value": "{color.primitive.white}",    "$description": "Default page/card background" },
+        "subtle":  { "$value": "{color.primitive.gray.50}",  "$description": "Subtle background (sidebar, inputs)" },
+        "raised":  { "$value": "{color.primitive.white}",    "$description": "Raised surface (card, modal)" },
+        "overlay": { "$value": "{color.primitive.gray.900}", "$description": "Overlay/backdrop background" }
+      },
+      "border": {
+        "default": { "$value": "{color.primitive.gray.200}", "$description": "Default border" },
+        "strong":  { "$value": "{color.primitive.gray.400}", "$description": "Strong/emphasis border" },
+        "focus":   { "$value": "{color.primitive.blue.500}", "$description": "Focus ring color" }
+      },
+      "feedback": {
+        "error":          { "$value": "{color.primitive.red.600}",   "$description": "Error state text/border" },
+        "errorBackground":{ "$value": "{color.primitive.red.50}",    "$description": "Error state background" },
+        "success":        { "$value": "{color.primitive.green.600}", "$description": "Success state text/border" },
+        "successBackground":{ "$value": "{color.primitive.green.50}", "$description": "Success state background" },
+        "warning":        { "$value": "{color.primitive.yellow.600}", "$description": "Warning state text/border" },
+        "warningBackground":{ "$value": "{color.primitive.yellow.50}", "$description": "Warning state background" }
+      }
+    }
+  }
+}

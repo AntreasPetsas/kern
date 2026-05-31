@@ -1,0 +1,82 @@
+/* Input — uses only --kern-* custom properties from build/css/variables.css */
+
+.kern-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kern-spacing-1-5);
+  font-family: var(--kern-typography-font-family-base);
+}
+
+/* Label */
+.kern-field__label {
+  font-size: var(--kern-typography-font-size-sm);
+  font-weight: var(--kern-typography-font-weight-medium);
+  color: var(--kern-color-text-default);
+  line-height: var(--kern-typography-line-height-tight);
+}
+
+.kern-field__required {
+  color: var(--kern-color-feedback-error);
+  margin-left: var(--kern-spacing-0-5);
+  aria-hidden: true;
+}
+
+/* Input element */
+.kern-field__input {
+  display: block;
+  width: 100%;
+  padding: var(--kern-spacing-2) var(--kern-spacing-3);
+  font-family: inherit;
+  font-size: var(--kern-typography-font-size-md);
+  font-weight: var(--kern-typography-font-weight-regular);
+  line-height: var(--kern-typography-line-height-base);
+  color: var(--kern-color-text-default);
+  background-color: var(--kern-color-surface-subtle);
+  border: 1px solid var(--kern-color-border-default);
+  border-radius: var(--kern-radius-md);
+  box-shadow: var(--kern-shadow-sm);
+  box-sizing: border-box;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+  appearance: none;
+}
+
+.kern-field__input::placeholder {
+  color: var(--kern-color-text-muted);
+}
+
+.kern-field__input:focus {
+  outline: none;
+  border-color: var(--kern-color-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--kern-color-border-focus) 20%, transparent);
+}
+
+/* Error variant */
+.kern-field--error .kern-field__input {
+  border-color: var(--kern-color-feedback-error);
+  background-color: var(--kern-color-feedback-error-background);
+}
+.kern-field--error .kern-field__input:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--kern-color-feedback-error) 20%, transparent);
+}
+
+/* Disabled */
+.kern-field__input:disabled {
+  color: var(--kern-color-text-disabled);
+  background-color: var(--kern-color-surface-subtle);
+  border-color: var(--kern-color-border-default);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Helper / error message */
+.kern-field__helper {
+  font-size: var(--kern-typography-font-size-xs);
+  color: var(--kern-color-text-muted);
+  line-height: var(--kern-typography-line-height-base);
+}
+
+.kern-field__error-msg {
+  font-size: var(--kern-typography-font-size-xs);
+  color: var(--kern-color-feedback-error);
+  line-height: var(--kern-typography-line-height-base);
+}

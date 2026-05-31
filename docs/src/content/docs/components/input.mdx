@@ -1,0 +1,118 @@
+---
+title: Input
+description: Single-line text entry field. Pairs with a visible label and optional helper text.
+---
+
+import { Input } from '@kern/components';
+import Preview from '../../../components/Preview.astro';
+
+Single-line text entry field. Always paired with a visible label. Supports helper text, error messages, and disabled state.
+
+## Default
+
+<Preview label="default">
+  <div style="width: 320px;">
+    <Input client:only="react" id="preview-email" label="Email address" placeholder="you@example.com" type="email" />
+  </div>
+</Preview>
+
+```jsx
+<Input id="email" label="Email address" placeholder="you@example.com" type="email" />
+```
+
+## With helper text
+
+<Preview label="helper text">
+  <div style="width: 320px;">
+    <Input client:only="react" id="preview-pw" label="Password" type="password" helperText="Must be at least 8 characters" />
+  </div>
+</Preview>
+
+```jsx
+<Input id="password" label="Password" type="password" helperText="Must be at least 8 characters" />
+```
+
+## Error state
+
+<Preview label="error">
+  <div style="width: 320px;">
+    <Input client:only="react" id="preview-err" label="Username" value="ab" errorMessage="Username must be at least 3 characters" />
+  </div>
+</Preview>
+
+```jsx
+<Input id="username" label="Username" value="ab" errorMessage="Username must be at least 3 characters" />
+```
+
+## Required + disabled
+
+<Preview label="required / disabled">
+  <div style="width: 320px; display: flex; flex-direction: column; gap: 1rem;">
+    <Input client:only="react" id="preview-req" label="Full name" required />
+    <Input client:only="react" id="preview-dis" label="Account ID" value="acc_8f3k2" disabled />
+  </div>
+</Preview>
+
+```jsx
+<Input id="name" label="Full name" required />
+<Input id="locked" label="Account ID" value="acc_8f3k2" disabled />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `id` | `string` | — | **Required.** Links input to its label. |
+| `label` | `string` | — | **Required.** Visible label text. |
+| `value` | `string` | `''` | Controlled value |
+| `onChange` | `ChangeEvent handler` | — | Change handler for controlled use |
+| `placeholder` | `string` | — | Hint text — supplementary, not a label replacement |
+| `helperText` | `string` | — | Hint below the field; hidden when `errorMessage` is set |
+| `errorMessage` | `string` | — | Validation error; switches to error state |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+| `required` | `boolean` | `false` | Adds `aria-required` and visual `*` indicator |
+| `type` | `string` | `'text'` | HTML input type |
+| `autoComplete` | `string` | — | HTML autocomplete attribute |
+
+## Tokens used
+
+| Token | Role |
+|-------|------|
+| `color.surface.subtle` | Input background |
+| `color.border.default` | Default border |
+| `color.border.focus` | Focus border + ring |
+| `color.text.default` | Input text |
+| `color.text.muted` | Placeholder text |
+| `color.text.disabled` | Disabled text |
+| `color.feedback.error` | Error border + message |
+| `color.feedback.errorBackground` | Error background |
+| `shadow.sm` | Subtle input shadow |
+| `spacing.2`, `spacing.3` | Input padding |
+| `radius.md` | Corner radius |
+| `typography.fontSize.sm` | Label font size |
+| `typography.fontSize.md` | Input font size |
+
+## Usage rules
+
+### Do
+- Always provide a **visible label** — use the `label` prop, not `placeholder` alone.
+- Use `helperText` to set user expectations **before** they interact.
+- Use `errorMessage` **after** validation — not before the user has had a chance to fill in the field.
+- Use `type="email"`, `type="password"` etc. for correct mobile keyboard and browser auto-fill.
+- Mark required fields with `required` and communicate the requirement in the label or `helperText`.
+
+### Don't
+- Don't use `placeholder` as a label — it disappears on input and fails contrast requirements.
+- Don't show an error before the field has been interacted with.
+- Don't rely on color alone to communicate error — the error message text is essential.
+- Don't use `disabled` when `readonly` is more appropriate.
+- Don't use for multi-line text — use a `<textarea>` instead.
+
+## Accessibility
+
+- **Role:** `textbox` (implicit — native `<input>` element)
+- `<label htmlFor={id}>` always rendered and visible
+- `aria-required="true"` when `required` is set
+- `aria-invalid="true"` when `errorMessage` is present
+- `aria-describedby` links to `helperText` or `errorMessage` element
+- Error message uses `role="alert"` for immediate screen-reader announcement

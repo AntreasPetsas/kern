@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@kern/tokens": ["./build/ts/tokens.ts"],
+      "@kern/css": ["./build/css/variables.css"]
+    }
+  },
+  "include": ["components/**/*", "scripts/**/*", "build/ts/**/*"],
+  "exclude": ["node_modules", "docs"]
+}

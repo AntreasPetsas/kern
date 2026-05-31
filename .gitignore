@@ -1,0 +1,8 @@
+plans/
+node_modules/
+dist/
+docs/node_modules/
+docs/dist/
+docs/.astro/
+*.log
+

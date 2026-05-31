@@ -1,0 +1,139 @@
+---
+title: Card
+description: Layout container that groups related content into a visually distinct surface.
+---
+
+import { Card, CardHeader, CardBody, CardFooter, Button } from '@kern/components';
+import Preview from '../../../components/Preview.astro';
+
+Layout container that groups related content into a visually distinct surface. Provides structure, not behaviour.
+
+Use `CardHeader`, `CardBody`, and `CardFooter` for consistent internal structure.
+
+## Default
+
+<Preview label="default (shadow sm)">
+  <div style="width: 320px;">
+    <Card client:only="react">
+      <CardHeader client:only="react"><h3 style="margin:0;font-size:var(--kern-typography-font-size-lg)">Project Alpha</h3></CardHeader>
+      <CardBody client:only="react"><p style="margin:0">Last updated 2 hours ago. 3 open tasks remaining.</p></CardBody>
+      <CardFooter client:only="react"><Button client:only="react" size="sm">View project</Button></CardFooter>
+    </Card>
+  </div>
+</Preview>
+
+```jsx
+<Card>
+  <CardHeader><h3>Project Alpha</h3></CardHeader>
+  <CardBody><p>Last updated 2 hours ago. 3 open tasks remaining.</p></CardBody>
+  <CardFooter><Button size="sm">View project</Button></CardFooter>
+</Card>
+```
+
+## Shadow variants
+
+<Preview label="none / sm / md / lg">
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+    <div style="width:180px;">
+      <Card client:only="react" shadow="none">
+        <CardBody client:only="react"><p style="margin:0;font-size:0.875rem">shadow: none</p></CardBody>
+      </Card>
+    </div>
+    <div style="width:180px;">
+      <Card client:only="react" shadow="sm">
+        <CardBody client:only="react"><p style="margin:0;font-size:0.875rem">shadow: sm</p></CardBody>
+      </Card>
+    </div>
+    <div style="width:180px;">
+      <Card client:only="react" shadow="md">
+        <CardBody client:only="react"><p style="margin:0;font-size:0.875rem">shadow: md</p></CardBody>
+      </Card>
+    </div>
+    <div style="width:180px;">
+      <Card client:only="react" shadow="lg">
+        <CardBody client:only="react"><p style="margin:0;font-size:0.875rem">shadow: lg</p></CardBody>
+      </Card>
+    </div>
+  </div>
+</Preview>
+
+```jsx
+<Card shadow="none">…</Card>
+<Card shadow="sm">…</Card>   {/* default */}
+<Card shadow="md">…</Card>
+<Card shadow="lg">…</Card>
+```
+
+## Full-bleed content
+
+<Preview label="padding='none' for full-bleed image">
+  <div style="width:280px;">
+    <Card client:only="react" padding="none" shadow="md">
+      <div style="height:120px;background:var(--kern-color-surface-subtle);display:flex;align-items:center;justify-content:center;color:var(--kern-color-text-muted);font-size:0.875rem;">image</div>
+      <CardBody client:only="react"><p style="margin:0">Card with full-bleed content</p></CardBody>
+    </Card>
+  </div>
+</Preview>
+
+```jsx
+<Card padding="none" shadow="md">
+  <img src="cover.jpg" alt="…" style={{ width: '100%' }} />
+  <CardBody><p>Card description</p></CardBody>
+</Card>
+```
+
+## Props
+
+### Card
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | **Required.** Card content |
+| `shadow` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'sm'` | Box shadow level |
+| `padding` | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'` | Internal padding |
+| `as` | `ElementType` | `'div'` | Rendered HTML element or component |
+| `className` | `string` | — | Additional class names |
+
+### CardHeader
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `children` | `ReactNode` | Title/subtitle content |
+| `action` | `ReactNode` | Optional action slot (e.g. icon button) |
+
+### CardBody / CardFooter
+
+Standard `children` + `className` passthrough.
+
+## Tokens used
+
+| Token | Role |
+|-------|------|
+| `color.surface.raised` | Card background |
+| `color.border.default` | Card border + dividers |
+| `shadow.none` – `shadow.lg` | Box shadow by variant |
+| `radius.lg` | Corner radius |
+| `spacing.4` – `spacing.8` | Padding by size |
+
+## Usage rules
+
+### Do
+- Use Card to group a **coherent set of related information** — a product, a person, a task.
+- Use `CardHeader` / `CardBody` / `CardFooter` to establish clear information hierarchy.
+- Choose the semantic element carefully: `as="article"` for self-contained content, `as="section"` for labelled groupings, `as="li"` inside a list of cards.
+- Use `shadow="none"` with an explicit border when cards appear on non-white backgrounds.
+- Keep Cards focused — if a card covers two unrelated topics, split into two cards.
+
+### Don't
+- Don't **nest Cards inside Cards** — creates visual ambiguity about hierarchy.
+- Don't put interactive links or buttons directly on the card root — put them in `CardFooter` or inline in `CardBody`.
+- Don't use Card as a generic wrapper for every UI region.
+- Don't use `shadow="lg"` for non-critical content on light backgrounds.
+- Don't use `padding="none"` without providing your own spacing.
+
+## Accessibility
+
+- **Role:** depends on `as` prop (see usage rules)
+- If `as="article"`, provide `aria-label` or `aria-labelledby` pointing to the `CardHeader` heading
+- Ensure `CardHeader` contains a heading element (`h2`–`h6`) for screen reader navigation
+- If the card is clickable as a whole, wrap content in a single `<a>` — don't add `onClick` to the card div

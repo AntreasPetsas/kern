@@ -1,0 +1,89 @@
+{
+  "$schema": "../specs/schema.json",
+  "name": "Card",
+  "description": "Layout container that groups related content into a visually distinct surface. Provides structure, not behaviour.",
+  "category": "layout",
+  "props": [
+    { "name": "children", "type": "ReactNode", "default": null, "required": true, "description": "Card content — use CardHeader, CardBody, CardFooter sub-components for structure" },
+    { "name": "shadow", "type": "'none' | 'sm' | 'md' | 'lg'", "default": "'sm'", "required": false, "description": "Box shadow level. 'none' for flat/bordered style, 'md'/'lg' for elevated surfaces." },
+    { "name": "padding", "type": "'none' | 'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Internal padding applied uniformly. Use 'none' when the card contains a full-bleed image or custom layout." },
+    { "name": "as", "type": "ElementType", "default": "'div'", "required": false, "description": "HTML element or React component to render as the card root. Use 'article' for self-contained content, 'section' for thematic groupings." },
+    { "name": "className", "type": "string", "default": null, "required": false, "description": "Additional class names for layout overrides (e.g. width, margin)" }
+  ],
+  "subComponents": [
+    { "name": "CardHeader", "description": "Top area — title, subtitle, and optional action (e.g. menu or icon button)" },
+    { "name": "CardBody", "description": "Main content area — text, images, data, form fields" },
+    { "name": "CardFooter", "description": "Bottom area — actions (buttons), metadata, or summary text" }
+  ],
+  "variants": [
+    { "name": "default", "description": "White surface with a subtle shadow — standard use case." },
+    { "name": "flat", "description": "No shadow; relies on border alone. Good for use on gray/subtle backgrounds." },
+    { "name": "raised", "description": "Prominent shadow — draws attention, modal-like weight." }
+  ],
+  "states": [
+    { "name": "default", "description": "Static container — no interactive states unless consumer adds them" }
+  ],
+  "tokensUsed": [
+    "color.semantic.surface.raised",
+    "color.semantic.surface.default",
+    "color.semantic.border.default",
+    "shadow.none",
+    "shadow.sm",
+    "shadow.md",
+    "shadow.lg",
+    "radius.lg",
+    "spacing.4",
+    "spacing.5",
+    "spacing.6",
+    "spacing.8"
+  ],
+  "usageRules": {
+    "do": [
+      "Use Card to group a coherent set of related information — a product, a person, a task.",
+      "Use CardHeader / CardBody / CardFooter to establish clear information hierarchy within the card.",
+      "Choose the semantic element carefully: use as='article' for self-contained content, as='section' for labelled groupings, as='li' inside a list of cards.",
+      "Use shadow='none' with an explicit border when cards appear on a non-white background.",
+      "Keep Cards focused — if a card's content covers two unrelated topics, split into two cards."
+    ],
+    "dont": [
+      "Don't nest Cards inside Cards — it creates visual ambiguity about hierarchy.",
+      "Don't put interactive elements like links or buttons directly on the card root — put them inside CardFooter or inline in CardBody.",
+      "Don't use Card as a generic wrapper for every UI region — use semantic HTML (section, aside, main) without a card surface when elevation isn't needed.",
+      "Don't use large shadow='lg' cards on light backgrounds for non-critical content — it creates false urgency.",
+      "Don't use padding='none' without providing your own spacing — content touching card edges looks broken."
+    ]
+  },
+  "accessibility": {
+    "role": "depends on `as` prop — see usage rules",
+    "keyboard": [
+      "No inherent keyboard interaction — keyboard behaviour is provided by interactive children"
+    ],
+    "aria": [
+      "If as='article', provide an accessible name via aria-label or aria-labelledby (pointing to the CardHeader heading)",
+      "If the card is clickable as a whole, use a single <a> or <button> wrapping the content — do not add onClick to the card div",
+      "Ensure CardHeader contains a heading element (h2–h6) for screen reader navigation"
+    ]
+  },
+  "examples": [
+    {
+      "label": "Basic card",
+      "description": "Default card with header, body, and footer",
+      "code": "<Card>\n  <CardHeader><h3>Project Alpha</h3></CardHeader>\n  <CardBody><p>Last updated 2 hours ago. 3 open tasks remaining.</p></CardBody>\n  <CardFooter><Button size='sm'>View project</Button></CardFooter>\n</Card>"
+    },
+    {
+      "label": "Flat card",
+      "description": "No shadow, border only — use on subtle backgrounds",
+      "code": "<Card shadow='none'>\n  <CardBody><p>Usage tip: flat cards work well inside a sidebar or on gray-100 backgrounds.</p></CardBody>\n</Card>"
+    },
+    {
+      "label": "Raised card",
+      "description": "Elevated surface for high-priority content",
+      "code": "<Card shadow='lg'>\n  <CardHeader><h3>Action required</h3></CardHeader>\n  <CardBody><p>Your trial expires in 3 days.</p></CardBody>\n  <CardFooter><Button variant='primary'>Upgrade now</Button></CardFooter>\n</Card>"
+    },
+    {
+      "label": "Full-bleed content",
+      "description": "Image flush to card edges",
+      "code": "<Card padding='none'>\n  <img src='cover.jpg' alt='Project cover' style={{ borderRadius: 'var(--kern-radius-lg) var(--kern-radius-lg) 0 0', width: '100%' }} />\n  <CardBody><p>Project description</p></CardBody>\n</Card>"
+    }
+  ]
+}

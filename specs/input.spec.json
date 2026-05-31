@@ -1,0 +1,109 @@
+{
+  "$schema": "../specs/schema.json",
+  "name": "Input",
+  "description": "Single-line text entry field. Pairs with a visible label and optional helper text.",
+  "category": "form",
+  "props": [
+    { "name": "id", "type": "string", "default": null, "required": true, "description": "Links the input to its <label>. Must be unique per page." },
+    { "name": "label", "type": "string", "default": null, "required": true, "description": "Visible label text. Always required — do not use placeholder as a substitute." },
+    { "name": "value", "type": "string", "default": "''", "required": false, "description": "Controlled value" },
+    { "name": "onChange", "type": "(e: ChangeEvent<HTMLInputElement>) => void", "default": null, "required": false, "description": "Change handler for controlled usage" },
+    { "name": "placeholder", "type": "string", "default": null, "required": false, "description": "Hint text shown when empty. Supplementary — not a label replacement." },
+    { "name": "helperText", "type": "string", "default": null, "required": false, "description": "Supplementary hint below the field. Hidden when errorMessage is present." },
+    { "name": "errorMessage", "type": "string", "default": null, "required": false, "description": "Validation error. When set, input switches to error state and this message replaces helperText." },
+    { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Prevents interaction" },
+    { "name": "required", "type": "boolean", "default": "false", "required": false, "description": "Marks field as required; adds aria-required and visual indicator" },
+    { "name": "type", "type": "string", "default": "'text'", "required": false, "description": "HTML input type (text, email, password, number, search, url, tel)" },
+    { "name": "autoComplete", "type": "string", "default": null, "required": false, "description": "HTML autocomplete attribute" }
+  ],
+  "variants": [
+    { "name": "default", "description": "Normal state — border default, subtle background." },
+    { "name": "error", "description": "Validation failed — red border, error message displayed below." }
+  ],
+  "states": [
+    { "name": "default", "description": "Resting — muted border, subtle fill" },
+    { "name": "focus", "description": "Active — focus ring, border color shifts to focus blue" },
+    { "name": "error", "description": "Validation failed — red border, error message visible" },
+    { "name": "error-focus", "description": "Error state with focus ring — focus ring uses error color" },
+    { "name": "disabled", "description": "Greyed out — interaction prevented, opacity reduced" },
+    { "name": "filled", "description": "Has a value — no visual change; placeholder hidden" }
+  ],
+  "tokensUsed": [
+    "color.semantic.surface.subtle",
+    "color.semantic.surface.default",
+    "color.semantic.border.default",
+    "color.semantic.border.focus",
+    "color.semantic.text.default",
+    "color.semantic.text.muted",
+    "color.semantic.text.disabled",
+    "color.semantic.feedback.error",
+    "color.semantic.feedback.errorBackground",
+    "spacing.2",
+    "spacing.3",
+    "spacing.4",
+    "radius.md",
+    "shadow.sm",
+    "typography.fontSize.sm",
+    "typography.fontSize.md",
+    "typography.fontWeight.medium",
+    "typography.fontWeight.regular",
+    "typography.lineHeight.base",
+    "typography.fontFamily.base"
+  ],
+  "usageRules": {
+    "do": [
+      "Always provide a visible label — use the label prop, not placeholder alone.",
+      "Use helperText to set user expectations before they interact (e.g. 'Must be 8+ characters').",
+      "Use errorMessage after validation, not before — don't show errors before the user has had a chance to fill in the field.",
+      "Use type='email', type='password', etc. for correct mobile keyboard and browser auto-fill.",
+      "Mark required fields with required prop and communicate requirements in the label or helperText."
+    ],
+    "dont": [
+      "Don't use placeholder as a label — it disappears on input and fails contrast requirements.",
+      "Don't show an error before the field has been interacted with.",
+      "Don't rely on color alone to communicate error state — the error message text is essential.",
+      "Don't disable a field to prevent editing when readonly is more appropriate.",
+      "Don't use for multi-line text — use a <textarea> instead."
+    ]
+  },
+  "accessibility": {
+    "role": "textbox",
+    "keyboard": [
+      "Tab — moves focus to the input",
+      "Shift+Tab — moves focus away"
+    ],
+    "aria": [
+      "aria-required='true' when required prop is set",
+      "aria-invalid='true' when errorMessage is present",
+      "aria-describedby pointing to helperText or errorMessage element id",
+      "<label htmlFor={id}> must always be present and visible"
+    ]
+  },
+  "examples": [
+    {
+      "label": "Basic input",
+      "description": "Controlled input with label and placeholder",
+      "code": "<Input id='email' label='Email address' placeholder='you@example.com' type='email' />"
+    },
+    {
+      "label": "With helper text",
+      "description": "Supplementary hint below the field",
+      "code": "<Input id='password' label='Password' type='password' helperText='Must be at least 8 characters' />"
+    },
+    {
+      "label": "Error state",
+      "description": "Validation error replaces helper text",
+      "code": "<Input id='username' label='Username' value='ab' errorMessage='Username must be at least 3 characters' />"
+    },
+    {
+      "label": "Required field",
+      "description": "Required indicator and aria-required",
+      "code": "<Input id='name' label='Full name' required />"
+    },
+    {
+      "label": "Disabled",
+      "description": "Non-interactive field",
+      "code": "<Input id='locked' label='Account ID' value='acc_8f3k2' disabled />"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+/* Button — uses only --kern-* custom properties from build/css/variables.css */
+
+.kern-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kern-spacing-2);
+  border: 1px solid transparent;
+  border-radius: var(--kern-radius-md);
+  font-family: var(--kern-typography-font-family-base);
+  font-weight: var(--kern-typography-font-weight-semibold);
+  line-height: var(--kern-typography-line-height-tight);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+  position: relative;
+  user-select: none;
+}
+
+/* Sizes */
+.kern-btn--sm {
+  font-size: var(--kern-typography-font-size-xs);
+  padding: var(--kern-spacing-1-5) var(--kern-spacing-3);
+  min-height: 2rem;
+}
+.kern-btn--md {
+  font-size: var(--kern-typography-font-size-sm);
+  padding: var(--kern-spacing-2) var(--kern-spacing-4);
+  min-height: 2.25rem;
+}
+.kern-btn--lg {
+  font-size: var(--kern-typography-font-size-md);
+  padding: var(--kern-spacing-2-5) var(--kern-spacing-5);
+  min-height: 2.75rem;
+}
+
+/* Primary */
+.kern-btn--primary {
+  background-color: var(--kern-color-action-primary);
+  color: var(--kern-color-action-primary-foreground);
+  border-color: var(--kern-color-action-primary);
+}
+.kern-btn--primary:hover:not(:disabled) {
+  background-color: var(--kern-color-action-primary-hover);
+  border-color: var(--kern-color-action-primary-hover);
+}
+
+/* Secondary */
+.kern-btn--secondary {
+  background-color: var(--kern-color-action-secondary);
+  color: var(--kern-color-action-secondary-foreground);
+  border-color: var(--kern-color-border-default);
+}
+.kern-btn--secondary:hover:not(:disabled) {
+  background-color: var(--kern-color-action-secondary-hover);
+}
+
+/* Ghost */
+.kern-btn--ghost {
+  background-color: var(--kern-color-action-ghost);
+  color: var(--kern-color-action-ghost-foreground);
+  border-color: transparent;
+}
+.kern-btn--ghost:hover:not(:disabled) {
+  background-color: var(--kern-color-action-ghost-hover);
+}
+
+/* Focus */
+.kern-btn:focus-visible {
+  outline: 2px solid var(--kern-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Active */
+.kern-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Disabled */
+.kern-btn:disabled,
+.kern-btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Loading */
+.kern-btn--loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* Full width */
+.kern-btn--full-width {
+  width: 100%;
+}
+
+/* Spinner */
+.kern-btn__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--kern-radius-full);
+  animation: kern-spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes kern-spin {
+  to { transform: rotate(360deg); }
+}

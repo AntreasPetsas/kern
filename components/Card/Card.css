@@ -1,0 +1,72 @@
+/* Card — uses only --kern-* custom properties from build/css/variables.css */
+
+.kern-card {
+  background-color: var(--kern-color-surface-raised);
+  border: 1px solid var(--kern-color-border-default);
+  border-radius: var(--kern-radius-lg);
+  overflow: hidden;
+}
+
+/* Shadow variants */
+.kern-card--shadow-none { box-shadow: var(--kern-shadow-none); }
+.kern-card--shadow-sm   { box-shadow: var(--kern-shadow-sm); }
+.kern-card--shadow-md   { box-shadow: var(--kern-shadow-md); }
+.kern-card--shadow-lg   { box-shadow: var(--kern-shadow-lg); }
+
+/* Padding variants (applied to sub-components when padding != 'none') */
+.kern-card--padding-sm  .kern-card__header,
+.kern-card--padding-sm  .kern-card__body,
+.kern-card--padding-sm  .kern-card__footer {
+  padding: var(--kern-spacing-4);
+}
+.kern-card--padding-md  .kern-card__header,
+.kern-card--padding-md  .kern-card__body,
+.kern-card--padding-md  .kern-card__footer {
+  padding: var(--kern-spacing-5) var(--kern-spacing-6);
+}
+.kern-card--padding-lg  .kern-card__header,
+.kern-card--padding-lg  .kern-card__body,
+.kern-card--padding-lg  .kern-card__footer {
+  padding: var(--kern-spacing-6) var(--kern-spacing-8);
+}
+.kern-card--padding-none .kern-card__header,
+.kern-card--padding-none .kern-card__body,
+.kern-card--padding-none .kern-card__footer {
+  padding: 0;
+}
+
+/* Sub-component dividers */
+.kern-card__header + .kern-card__body,
+.kern-card__body + .kern-card__footer {
+  border-top: 1px solid var(--kern-color-border-default);
+}
+
+/* CardHeader */
+.kern-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--kern-spacing-3);
+}
+
+.kern-card__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kern-spacing-1);
+  min-width: 0;
+}
+
+/* CardBody */
+.kern-card__body {
+  font-family: var(--kern-typography-font-family-base);
+  font-size: var(--kern-typography-font-size-md);
+  color: var(--kern-color-text-default);
+  line-height: var(--kern-typography-line-height-base);
+}
+
+/* CardFooter */
+.kern-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--kern-spacing-3);
+}

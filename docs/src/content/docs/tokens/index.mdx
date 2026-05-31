@@ -1,0 +1,140 @@
+---
+title: Token Reference
+description: All 116 design tokens — color, typography, spacing, radius, and shadow.
+---
+
+Design tokens are the single source of truth for all visual values in Kern. They are authored once in `tokens/*.json` (W3C DTCG format) and compiled into CSS custom properties, TypeScript types, and a Tailwind preset by the build step.
+
+## How to use
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="CSS custom properties">
+    ```css
+    /* Link build/css/variables.css, then reference --kern-* vars */
+    .my-component {
+      background-color: var(--kern-color-action-primary);
+      padding: var(--kern-spacing-4);
+      border-radius: var(--kern-radius-md);
+      box-shadow: var(--kern-shadow-sm);
+    }
+    ```
+  </TabItem>
+  <TabItem label="TypeScript tokens">
+    ```ts
+    import { tokens } from '@kern/design-system/tokens';
+
+    const primary = tokens.color.action.primary;   // "#2563eb"
+    const spacing = tokens.spacing[4];             // "1rem"
+    ```
+  </TabItem>
+  <TabItem label="Tailwind preset">
+    ```js
+    // tailwind.config.js
+    import kernPreset from '@kern/design-system/tailwind';
+    export default { presets: [kernPreset] };
+    ```
+    ```jsx
+    <div className="bg-action-primary text-white p-4 rounded-md shadow-sm">…</div>
+    ```
+  </TabItem>
+</Tabs>
+
+## Color — semantic (prefer these)
+
+Semantic tokens communicate intent and survive palette changes. Always prefer them over primitives.
+
+| Token | Resolves to | Description |
+|-------|------------|-------------|
+| `color.action.primary` | `#2563eb` | Primary action background |
+| `color.action.primaryHover` | `#1d4ed8` | Primary hover |
+| `color.action.primaryForeground` | `#ffffff` | Text on primary |
+| `color.action.secondary` | `#f3f4f6` | Secondary background |
+| `color.action.secondaryHover` | `#e5e7eb` | Secondary hover |
+| `color.action.secondaryForeground` | `#1f2937` | Text on secondary |
+| `color.action.ghost` | `transparent` | Ghost background |
+| `color.action.ghostHover` | `#f3f4f6` | Ghost hover |
+| `color.action.ghostForeground` | `#374151` | Text on ghost |
+| `color.text.default` | `#111827` | Default body text |
+| `color.text.muted` | `#6b7280` | Secondary/hint text |
+| `color.text.disabled` | `#d1d5db` | Disabled text |
+| `color.text.onDark` | `#ffffff` | Text on dark backgrounds |
+| `color.text.link` | `#2563eb` | Link text |
+| `color.surface.default` | `#ffffff` | Page background |
+| `color.surface.subtle` | `#f9fafb` | Sidebar/input background |
+| `color.surface.raised` | `#ffffff` | Card/modal background |
+| `color.border.default` | `#e5e7eb` | Default border |
+| `color.border.strong` | `#9ca3af` | Emphasis border |
+| `color.border.focus` | `#3b82f6` | Focus ring |
+| `color.feedback.error` | `#dc2626` | Error text/border |
+| `color.feedback.errorBackground` | `#fef2f2` | Error background |
+| `color.feedback.success` | `#16a34a` | Success text/border |
+| `color.feedback.successBackground` | `#f0fdf4` | Success background |
+| `color.feedback.warning` | `#ca8a04` | Warning text/border |
+| `color.feedback.warningBackground` | `#fefce8` | Warning background |
+
+## Spacing
+
+The spacing scale is rem-based with pixel equivalents noted. Stick to this scale for all padding, margin, and gap values.
+
+| Token | Value | px |
+|-------|-------|-----|
+| `spacing.0-5` | `0.125rem` | 2px |
+| `spacing.1` | `0.25rem` | 4px |
+| `spacing.1-5` | `0.375rem` | 6px |
+| `spacing.2` | `0.5rem` | 8px |
+| `spacing.2-5` | `0.625rem` | 10px |
+| `spacing.3` | `0.75rem` | 12px |
+| `spacing.3-5` | `0.875rem` | 14px |
+| `spacing.4` | `1rem` | 16px |
+| `spacing.5` | `1.25rem` | 20px |
+| `spacing.6` | `1.5rem` | 24px |
+| `spacing.8` | `2rem` | 32px |
+| `spacing.10` | `2.5rem` | 40px |
+| `spacing.12` | `3rem` | 48px |
+| `spacing.16` | `4rem` | 64px |
+
+## Typography
+
+| Token | Value | Use |
+|-------|-------|-----|
+| `typography.fontFamily.base` | Inter, system-ui… | All UI text |
+| `typography.fontFamily.mono` | JetBrains Mono… | Code |
+| `typography.fontSize.xs` | 0.75rem | Captions, labels |
+| `typography.fontSize.sm` | 0.875rem | Secondary text |
+| `typography.fontSize.md` | 1rem | Body text |
+| `typography.fontSize.lg` | 1.125rem | Lead text |
+| `typography.fontSize.xl` | 1.25rem | Subheadings |
+| `typography.fontSize.2xl` | 1.5rem | Section headings |
+| `typography.fontSize.3xl` | 1.875rem | Page headings |
+| `typography.fontSize.4xl` | 2.25rem | Hero headings |
+| `typography.fontWeight.regular` | 400 | Body |
+| `typography.fontWeight.medium` | 500 | Emphasis |
+| `typography.fontWeight.semibold` | 600 | Headings, labels |
+| `typography.fontWeight.bold` | 700 | Strong emphasis |
+| `typography.lineHeight.tight` | 1.25 | Headings |
+| `typography.lineHeight.base` | 1.5 | Body text |
+| `typography.lineHeight.relaxed` | 1.75 | Long-form content |
+
+## Radius
+
+| Token | Value | Use |
+|-------|-------|-----|
+| `radius.none` | 0 | No rounding |
+| `radius.sm` | 0.25rem | Inputs, small badges |
+| `radius.md` | 0.5rem | Buttons, cards |
+| `radius.lg` | 0.75rem | Modals, large cards |
+| `radius.xl` | 1rem | Extra prominent |
+| `radius.full` | 9999px | Pills, avatars |
+
+## Shadow
+
+| Token | Use |
+|-------|-----|
+| `shadow.none` | No shadow (flat style) |
+| `shadow.sm` | Inputs, small cards |
+| `shadow.md` | Cards, dropdowns |
+| `shadow.lg` | Modals, popovers |
+| `shadow.xl` | Overlays |
+| `shadow.inner` | Pressed states, inset inputs |

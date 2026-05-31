@@ -1,0 +1,122 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --kern-color-blue-50: #eff6ff; /** Blue 50 */
+  --kern-color-blue-100: #dbeafe; /** Blue 100 */
+  --kern-color-blue-200: #bfdbfe; /** Blue 200 */
+  --kern-color-blue-300: #93c5fd; /** Blue 300 */
+  --kern-color-blue-400: #60a5fa; /** Blue 400 */
+  --kern-color-blue-500: #0ea5e9; /** Blue 500 */
+  --kern-color-blue-600: #2563eb; /** Blue 600 */
+  --kern-color-blue-700: #1d4ed8; /** Blue 700 */
+  --kern-color-blue-800: #1e40af; /** Blue 800 */
+  --kern-color-blue-900: #1e3a8a; /** Blue 900 */
+  --kern-color-gray-50: #f9fafb; /** Gray 50 */
+  --kern-color-gray-100: #f3f4f6; /** Gray 100 */
+  --kern-color-gray-200: #e5e7eb; /** Gray 200 */
+  --kern-color-gray-300: #d1d5db; /** Gray 300 */
+  --kern-color-gray-400: #9ca3af; /** Gray 400 */
+  --kern-color-gray-500: #6b7280; /** Gray 500 */
+  --kern-color-gray-600: #4b5563; /** Gray 600 */
+  --kern-color-gray-700: #374151; /** Gray 700 */
+  --kern-color-gray-800: #1f2937; /** Gray 800 */
+  --kern-color-gray-900: #111827; /** Gray 900 */
+  --kern-color-red-50: #fef2f2; /** Red 50 */
+  --kern-color-red-100: #fee2e2; /** Red 100 */
+  --kern-color-red-500: #ef4444; /** Red 500 */
+  --kern-color-red-600: #dc2626; /** Red 600 */
+  --kern-color-red-700: #b91c1c; /** Red 700 */
+  --kern-color-green-50: #f0fdf4; /** Green 50 */
+  --kern-color-green-100: #dcfce7; /** Green 100 */
+  --kern-color-green-500: #22c55e; /** Green 500 */
+  --kern-color-green-600: #16a34a; /** Green 600 */
+  --kern-color-green-700: #15803d; /** Green 700 */
+  --kern-color-yellow-50: #fefce8; /** Yellow 50 */
+  --kern-color-yellow-100: #fef9c3; /** Yellow 100 */
+  --kern-color-yellow-500: #eab308; /** Yellow 500 */
+  --kern-color-yellow-600: #ca8a04; /** Yellow 600 */
+  --kern-color-white: #ffffff; /** White */
+  --kern-color-black: #000000; /** Black */
+  --kern-color-transparent: transparent; /** Transparent */
+  --kern-color-action-primary: #2563eb; /** Primary action background */
+  --kern-color-action-primary-hover: #1d4ed8; /** Primary action background on hover */
+  --kern-color-action-primary-foreground: #ffffff; /** Text/icon on primary action */
+  --kern-color-action-secondary: #f3f4f6; /** Secondary action background */
+  --kern-color-action-secondary-hover: #e5e7eb; /** Secondary action background on hover */
+  --kern-color-action-secondary-foreground: #1f2937; /** Text/icon on secondary action */
+  --kern-color-action-ghost: transparent; /** Ghost action background */
+  --kern-color-action-ghost-hover: #f3f4f6; /** Ghost action background on hover */
+  --kern-color-action-ghost-foreground: #374151; /** Text/icon on ghost action */
+  --kern-color-text-default: #111827; /** Default body text */
+  --kern-color-text-muted: #6b7280; /** Muted/secondary text */
+  --kern-color-text-disabled: #d1d5db; /** Disabled text */
+  --kern-color-text-on-dark: #ffffff; /** Text on dark backgrounds */
+  --kern-color-text-link: #2563eb; /** Link text */
+  --kern-color-text-link-hover: #1d4ed8; /** Link text on hover */
+  --kern-color-surface-default: #ffffff; /** Default page/card background */
+  --kern-color-surface-subtle: #f9fafb; /** Subtle background (sidebar, inputs) */
+  --kern-color-surface-raised: #ffffff; /** Raised surface (card, modal) */
+  --kern-color-surface-overlay: #111827; /** Overlay/backdrop background */
+  --kern-color-border-default: #e5e7eb; /** Default border */
+  --kern-color-border-strong: #9ca3af; /** Strong/emphasis border */
+  --kern-color-border-focus: #0ea5e9; /** Focus ring color */
+  --kern-color-feedback-error: #dc2626; /** Error state text/border */
+  --kern-color-feedback-error-background: #fef2f2; /** Error state background */
+  --kern-color-feedback-success: #16a34a; /** Success state text/border */
+  --kern-color-feedback-success-background: #f0fdf4; /** Success state background */
+  --kern-color-feedback-warning: #ca8a04; /** Warning state text/border */
+  --kern-color-feedback-warning-background: #fefce8; /** Warning state background */
+  --kern-radius-none: 0rem; /** No rounding */
+  --kern-radius-sm: 0.25rem; /** 4px — subtle rounding (inputs, small badges) */
+  --kern-radius-md: 0.5rem; /** 8px — default rounding (buttons, cards) */
+  --kern-radius-lg: 0.75rem; /** 12px — prominent rounding (modals, large cards) */
+  --kern-radius-xl: 1rem; /** 16px — extra prominent */
+  --kern-radius-full: 9999px; /** Pill / fully rounded (tags, avatars) */
+  --kern-shadow-none: none; /** No shadow */
+  --kern-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /** Subtle shadow — inputs, small cards */
+  --kern-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /** Default shadow — cards, dropdowns */
+  --kern-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /** Prominent shadow — modals, popovers */
+  --kern-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /** Large shadow — overlays */
+  --kern-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05); /** Inset shadow — pressed states, inset inputs */
+  --kern-spacing-0: 0rem; /** 0px */
+  --kern-spacing-1: 0.25rem; /** 4px */
+  --kern-spacing-2: 0.5rem; /** 8px */
+  --kern-spacing-3: 0.75rem; /** 12px */
+  --kern-spacing-4: 1rem; /** 16px */
+  --kern-spacing-5: 1.25rem; /** 20px */
+  --kern-spacing-6: 1.5rem; /** 24px */
+  --kern-spacing-7: 1.75rem; /** 28px */
+  --kern-spacing-8: 2rem; /** 32px */
+  --kern-spacing-10: 2.5rem; /** 40px */
+  --kern-spacing-12: 3rem; /** 48px */
+  --kern-spacing-16: 4rem; /** 64px */
+  --kern-spacing-20: 5rem; /** 80px */
+  --kern-spacing-24: 6rem; /** 96px */
+  --kern-spacing-0-5: 0.125rem; /** 2px */
+  --kern-spacing-1-5: 0.375rem; /** 6px */
+  --kern-spacing-2-5: 0.625rem; /** 10px */
+  --kern-spacing-3-5: 0.875rem; /** 14px */
+  --kern-typography-font-family-base: Inter, system-ui, -apple-system, sans-serif; /** Primary typeface for UI */
+  --kern-typography-font-family-mono: JetBrains Mono, Menlo, Consolas, monospace; /** Monospace typeface for code */
+  --kern-typography-font-size-xs: 0.75rem; /** 12px — captions, labels */
+  --kern-typography-font-size-sm: 0.875rem; /** 14px — secondary text, small buttons */
+  --kern-typography-font-size-md: 1rem; /** 16px — base body text */
+  --kern-typography-font-size-lg: 1.125rem; /** 18px — lead text, large buttons */
+  --kern-typography-font-size-xl: 1.25rem; /** 20px — subheadings */
+  --kern-typography-font-size-2xl: 1.5rem; /** 24px — section headings */
+  --kern-typography-font-size-3xl: 1.875rem; /** 30px — page headings */
+  --kern-typography-font-size-4xl: 2.25rem; /** 36px — hero headings */
+  --kern-typography-font-weight-regular: 400; /** Normal weight */
+  --kern-typography-font-weight-medium: 500; /** Medium weight — emphasis */
+  --kern-typography-font-weight-semibold: 600; /** Semibold — headings, labels */
+  --kern-typography-font-weight-bold: 700; /** Bold — strong emphasis */
+  --kern-typography-line-height-tight: 1.25; /** Tight — headings */
+  --kern-typography-line-height-base: 1.5; /** Base — body text */
+  --kern-typography-line-height-relaxed: 1.75; /** Relaxed — long-form content */
+  --kern-typography-letter-spacing-tight: -0.025em; /** Tight tracking — large headings */
+  --kern-typography-letter-spacing-normal: 0em; /** Normal tracking */
+  --kern-typography-letter-spacing-wide: 0.025em; /** Wide tracking — small caps, labels */
+  --kern-typography-letter-spacing-wider: 0.05em; /** Wider tracking — uppercase labels */
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "../specs/schema.json",
+  "name": "Button",
+  "description": "Triggers an action or event. The primary interactive element for user-initiated actions.",
+  "category": "action",
+  "props": [
+    { "name": "children", "type": "ReactNode", "default": null, "required": true, "description": "Button label or icon+label content" },
+    { "name": "variant", "type": "'primary' | 'secondary' | 'ghost'", "default": "'primary'", "required": false, "description": "Visual style. primary = filled, secondary = outlined/muted fill, ghost = transparent" },
+    { "name": "size", "type": "'sm' | 'md' | 'lg'", "default": "'md'", "required": false, "description": "Physical size affecting padding and font-size" },
+    { "name": "disabled", "type": "boolean", "default": "false", "required": false, "description": "Prevents interaction and signals unavailability" },
+    { "name": "loading", "type": "boolean", "default": "false", "required": false, "description": "Shows a spinner and prevents interaction while an async action runs" },
+    { "name": "fullWidth", "type": "boolean", "default": "false", "required": false, "description": "Stretches the button to fill its container width" },
+    { "name": "type", "type": "'button' | 'submit' | 'reset'", "default": "'button'", "required": false, "description": "HTML button type. Use 'submit' inside forms" },
+    { "name": "onClick", "type": "(e: MouseEvent) => void", "default": null, "required": false, "description": "Click handler" }
+  ],
+  "variants": [
+    { "name": "primary", "description": "High-emphasis action. Use once per section for the single most important action." },
+    { "name": "secondary", "description": "Medium-emphasis. Supports the primary action or provides a safe alternative." },
+    { "name": "ghost", "description": "Low-emphasis. Tertiary actions, destructive confirmations, or toolbar controls." }
+  ],
+  "states": [
+    { "name": "default", "description": "Resting state" },
+    { "name": "hover", "description": "Cursor over the button — background shifts one shade darker" },
+    { "name": "focus-visible", "description": "Keyboard-focused — 2px solid focus ring with offset" },
+    { "name": "active", "description": "Mouse pressed — slight scale-down for tactile feedback" },
+    { "name": "disabled", "description": "Interaction blocked — muted palette, not-allowed cursor" },
+    { "name": "loading", "description": "Async action running — spinner replaces or prefixes label, pointer-events none" }
+  ],
+  "tokensUsed": [
+    "color.semantic.action.primary",
+    "color.semantic.action.primaryHover",
+    "color.semantic.action.primaryForeground",
+    "color.semantic.action.secondary",
+    "color.semantic.action.secondaryHover",
+    "color.semantic.action.secondaryForeground",
+    "color.semantic.action.ghost",
+    "color.semantic.action.ghostHover",
+    "color.semantic.action.ghostForeground",
+    "color.semantic.border.focus",
+    "color.semantic.text.disabled",
+    "spacing.2",
+    "spacing.3",
+    "spacing.4",
+    "spacing.5",
+    "spacing.6",
+    "radius.md",
+    "typography.fontSize.sm",
+    "typography.fontSize.md",
+    "typography.fontWeight.semibold",
+    "typography.lineHeight.tight",
+    "typography.fontFamily.base"
+  ],
+  "usageRules": {
+    "do": [
+      "Use one primary Button per section — it signals the single most important action.",
+      "Label with a verb that describes the outcome: 'Save changes', 'Create project', 'Delete account'.",
+      "Use loading state for async operations lasting more than 300ms.",
+      "Use type='submit' when the button submits a form.",
+      "Pair a primary button with a secondary or ghost for a cancel/back option."
+    ],
+    "dont": [
+      "Don't use a Button for navigation — use a link (<a>) instead.",
+      "Don't stack multiple primary Buttons in the same view.",
+      "Don't use disabled to hide unavailable actions — consider explaining why it's unavailable.",
+      "Don't truncate button labels — if space is tight, shorten the copy, not the element.",
+      "Don't use the ghost variant for the most critical action in a section."
+    ]
+  },
+  "accessibility": {
+    "role": "button",
+    "keyboard": [
+      "Enter — activates the button",
+      "Space — activates the button"
+    ],
+    "aria": [
+      "aria-disabled='true' when disabled (keep focusable so screen readers announce it)",
+      "aria-busy='true' + aria-label update when loading",
+      "No aria-role needed — native <button> has implicit button role"
+    ]
+  },
+  "examples": [
+    {
+      "label": "Primary variants",
+      "description": "All three variants at default size",
+      "code": "<Button variant='primary'>Save changes</Button>\n<Button variant='secondary'>Cancel</Button>\n<Button variant='ghost'>Delete</Button>"
+    },
+    {
+      "label": "Size scale",
+      "description": "sm / md / lg at primary variant",
+      "code": "<Button size='sm'>Small</Button>\n<Button size='md'>Medium</Button>\n<Button size='lg'>Large</Button>"
+    },
+    {
+      "label": "Loading state",
+      "description": "Async action in progress",
+      "code": "<Button loading>Saving…</Button>"
+    },
+    {
+      "label": "Form submit",
+      "description": "Submit button inside a form",
+      "code": "<Button type='submit' variant='primary'>Create account</Button>"
+    }
+  ]
+}

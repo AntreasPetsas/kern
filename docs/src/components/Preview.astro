@@ -1,0 +1,38 @@
+---
+interface Props {
+  label?: string;
+}
+const { label } = Astro.props;
+---
+<div class="kern-preview">
+  {label && <div class="kern-preview__label">{label}</div>}
+  <div class="kern-preview__stage">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .kern-preview {
+    border: 1px solid var(--kern-color-border-default, #e5e7eb);
+    border-radius: var(--kern-radius-lg, 0.75rem);
+    overflow: hidden;
+    margin-block: 1rem;
+  }
+  .kern-preview__label {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--kern-color-text-muted, #6b7280);
+    background: var(--kern-color-surface-subtle, #f9fafb);
+    border-bottom: 1px solid var(--kern-color-border-default, #e5e7eb);
+    font-family: var(--kern-typography-font-family-base, sans-serif);
+  }
+  .kern-preview__stage {
+    padding: 2rem;
+    background: var(--kern-color-surface-default, #fff);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+</style>

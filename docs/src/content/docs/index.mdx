@@ -1,0 +1,57 @@
+---
+title: Kern Design System
+description: Tokens, components, and rules authored once, consumed everywhere.
+template: splash
+hero:
+  title: Kern
+  tagline: The seed at the core. One source of truth — tokens, components, and rules authored once, consumed everywhere.
+  actions:
+    - text: Token Reference
+      link: /tokens/
+      icon: right-arrow
+      variant: primary
+    - text: Components
+      link: /components/button/
+      icon: right-arrow
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Four ways to consume Kern
+
+<CardGrid>
+  <Card title="npm package" icon="seti:npm">
+    ```bash
+    npm i @kern/design-system
+    ```
+    Import components and typed tokens in any React project.
+  </Card>
+  <Card title="CSS drop-in" icon="seti:css">
+    Copy `build/css/variables.css` into any project. All token values as `--kern-*` CSS custom properties — no build step required.
+  </Card>
+  <Card title="LLM Skill" icon="star">
+    Copy the `skill/` directory. The `SKILL.md` entrypoint uses progressive disclosure — the model loads details only when needed.
+  </Card>
+  <Card title="Context bundle" icon="document">
+    Copy `llm-context/context-bundle.md` into any prompt. The full token catalog, all component specs, and all usage rules in one paste.
+  </Card>
+</CardGrid>
+
+## What's inside
+
+- **116 design tokens** across color, typography, spacing, radius, and shadow — in W3C DTCG format
+- **3 reference components** (Button, Input, Card) that demonstrate how tokens map to styles
+- **One build step** regenerates all artifacts: CSS variables, Tailwind preset, TypeScript types, Skill files, and the context bundle
+
+## The core principle
+
+Everything is generated from one source. Edit `tokens/` or `specs/` — run `npm run build` — and all consumers update.
+
+```bash
+npm run build
+# → build/css/variables.css
+# → build/tailwind/preset.js
+# → build/ts/tokens.ts
+# → skill/SKILL.md + references/
+# → llm-context/context-bundle.md
+```

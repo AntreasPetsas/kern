@@ -1,0 +1,48 @@
+{
+  "name": "@kern/design-system",
+  "version": "0.0.1",
+  "description": "Kern — tokens, components, and rules authored once, consumed everywhere.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./components/index.js",
+      "require": "./components/index.js"
+    },
+    "./tokens": "./build/ts/tokens.ts",
+    "./css": "./build/css/variables.css",
+    "./tailwind": "./build/tailwind/preset.js"
+  },
+  "files": [
+    "build/",
+    "components/",
+    "tokens/",
+    "specs/",
+    "skill/",
+    "llm-context/"
+  ],
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build:skill": "node scripts/build-skill.mjs",
+    "build:context": "node scripts/build-context-bundle.mjs",
+    "build": "npm run build:tokens && npm run build:skill && npm run build:context",
+    "docs:dev": "cd docs && npm run dev",
+    "docs:build": "cd docs && npm run build"
+  },
+  "devDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "style-dictionary": "^4.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

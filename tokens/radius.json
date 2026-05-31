@@ -1,0 +1,11 @@
+{
+  "radius": {
+    "$type": "dimension",
+    "none": { "$value": "0rem",     "$description": "No rounding" },
+    "sm":   { "$value": "0.25rem",  "$description": "4px — subtle rounding (inputs, small badges)" },
+    "md":   { "$value": "0.5rem",   "$description": "8px — default rounding (buttons, cards)" },
+    "lg":   { "$value": "0.75rem",  "$description": "12px — prominent rounding (modals, large cards)" },
+    "xl":   { "$value": "1rem",     "$description": "16px — extra prominent" },
+    "full": { "$value": "9999px",   "$description": "Pill / fully rounded (tags, avatars)" }
+  }
+}

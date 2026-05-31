@@ -1,0 +1,40 @@
+{
+  "typography": {
+    "fontFamily": {
+      "$type": "fontFamily",
+      "base": { "$value": "Inter, system-ui, -apple-system, sans-serif", "$description": "Primary typeface for UI" },
+      "mono": { "$value": "JetBrains Mono, Menlo, Consolas, monospace",  "$description": "Monospace typeface for code" }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "xs":  { "$value": "0.75rem",  "$description": "12px — captions, labels" },
+      "sm":  { "$value": "0.875rem", "$description": "14px — secondary text, small buttons" },
+      "md":  { "$value": "1rem",     "$description": "16px — base body text" },
+      "lg":  { "$value": "1.125rem", "$description": "18px — lead text, large buttons" },
+      "xl":  { "$value": "1.25rem",  "$description": "20px — subheadings" },
+      "2xl": { "$value": "1.5rem",   "$description": "24px — section headings" },
+      "3xl": { "$value": "1.875rem", "$description": "30px — page headings" },
+      "4xl": { "$value": "2.25rem",  "$description": "36px — hero headings" }
+    },
+    "fontWeight": {
+      "$type": "number",
+      "regular":   { "$value": 400, "$description": "Normal weight" },
+      "medium":    { "$value": 500, "$description": "Medium weight — emphasis" },
+      "semibold":  { "$value": 600, "$description": "Semibold — headings, labels" },
+      "bold":      { "$value": 700, "$description": "Bold — strong emphasis" }
+    },
+    "lineHeight": {
+      "$type": "number",
+      "tight":   { "$value": 1.25, "$description": "Tight — headings" },
+      "base":    { "$value": 1.5,  "$description": "Base — body text" },
+      "relaxed": { "$value": 1.75, "$description": "Relaxed — long-form content" }
+    },
+    "letterSpacing": {
+      "$type": "dimension",
+      "tight":  { "$value": "-0.025em", "$description": "Tight tracking — large headings" },
+      "normal": { "$value": "0em",      "$description": "Normal tracking" },
+      "wide":   { "$value": "0.025em",  "$description": "Wide tracking — small caps, labels" },
+      "wider":  { "$value": "0.05em",   "$description": "Wider tracking — uppercase labels" }
+    }
+  }
+}

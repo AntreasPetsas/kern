@@ -1,0 +1,102 @@
+---
+title: Button
+description: Triggers an action or event. The primary interactive element for user-initiated actions.
+---
+
+import { Button } from '@kern/components';
+import Preview from '../../../components/Preview.astro';
+
+Triggers an action or event. The primary interactive element for user-initiated actions.
+
+## Variants
+
+<Preview label="primary / secondary / ghost">
+  <Button client:only="react" variant="primary">Save changes</Button>
+  <Button client:only="react" variant="secondary">Cancel</Button>
+  <Button client:only="react" variant="ghost">Delete</Button>
+</Preview>
+
+```jsx
+<Button variant="primary">Save changes</Button>
+<Button variant="secondary">Cancel</Button>
+<Button variant="ghost">Delete</Button>
+```
+
+## Sizes
+
+<Preview label="sm / md / lg">
+  <Button client:only="react" size="sm">Small</Button>
+  <Button client:only="react" size="md">Medium</Button>
+  <Button client:only="react" size="lg">Large</Button>
+</Preview>
+
+```jsx
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>   {/* default */}
+<Button size="lg">Large</Button>
+```
+
+## States
+
+<Preview label="loading / disabled">
+  <Button client:only="react" loading>Saving…</Button>
+  <Button client:only="react" disabled>Unavailable</Button>
+  <Button client:only="react" variant="secondary" disabled>Unavailable</Button>
+</Preview>
+
+```jsx
+<Button loading>Saving…</Button>
+<Button disabled>Unavailable</Button>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | Button label or icon+label content |
+| `variant` | `'primary' \| 'secondary' \| 'ghost'` | `'primary'` | Visual style |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Physical size |
+| `disabled` | `boolean` | `false` | Prevents interaction |
+| `loading` | `boolean` | `false` | Shows spinner, prevents interaction |
+| `fullWidth` | `boolean` | `false` | Stretches to container width |
+| `type` | `'button' \| 'submit' \| 'reset'` | `'button'` | HTML button type |
+| `onClick` | `(e: MouseEvent) => void` | — | Click handler |
+
+## Tokens used
+
+| Token | Role |
+|-------|------|
+| `color.action.primary` | Primary background |
+| `color.action.primaryHover` | Primary hover background |
+| `color.action.primaryForeground` | Primary text/icon |
+| `color.action.secondary` | Secondary background |
+| `color.action.ghost` | Ghost background (transparent) |
+| `color.border.focus` | Focus ring color |
+| `color.text.disabled` | Disabled text |
+| `spacing.2` – `spacing.6` | Padding by size |
+| `radius.md` | Corner radius |
+| `typography.fontSize.xs` – `.md` | Font size by size |
+| `typography.fontWeight.semibold` | Font weight |
+
+## Usage rules
+
+### Do
+- Use **one primary Button per section** — it signals the single most important action.
+- Label with a verb that describes the outcome: *Save changes*, *Create project*, *Delete account*.
+- Use `loading` state for async operations lasting more than 300ms.
+- Use `type="submit"` when the button submits a form.
+- Pair a primary button with a secondary or ghost for a cancel/back option.
+
+### Don't
+- Don't use a Button for navigation — use a link (`<a>`) instead.
+- Don't stack multiple primary Buttons in the same view.
+- Don't use `disabled` to hide unavailable actions — explain why it's unavailable.
+- Don't truncate button labels — shorten the copy, not the element.
+- Don't use the ghost variant for the most critical action in a section.
+
+## Accessibility
+
+- **Role:** `button` (implicit — native `<button>` element)
+- **Keyboard:** `Enter` and `Space` activate the button
+- `aria-disabled="true"` when disabled (keeps element focusable)
+- `aria-busy="true"` when loading
